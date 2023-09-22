@@ -25,12 +25,11 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
-app.use(cors())
+app.use(cors({
+	origin: ['https://itsuhsko14.github.io', 'http://localhost:3000'],
+}))
 
-
-app.get('/',  (req, res) => {
-			
-
+app.get('/',  (req, res) => {			
 });
 
 app.post('/auth/register', registerValidation, handleValidationError, UserController.register)

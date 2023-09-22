@@ -85,7 +85,7 @@ export const remove = async (req, res) => {
 export const update = async (req, res) => {
 	try {
 		const cardId = req.params.id;
-
+		console.log(req.body);
 		const result = await CardModel.updateOne(
 			{
 				_id: cardId
@@ -94,6 +94,7 @@ export const update = async (req, res) => {
 				title: req.body.title,
 				text: req.body.text,
 				user: req.userId,
+				items: req.body.items,
 			}
 		)
 
