@@ -26,7 +26,12 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 app.use(cors({
-	origin: ['https://itsuhsko14.github.io', 'http://localhost:3000', 'https://chef-assistant-chefapp.vercel.app/', 'https://www.chefassistant.pp.ua/'],
+	origin: [
+				'https://itsuhsko14.github.io', 
+				'http://localhost:3000', 
+				'https://chef-assistant-chefapp.vercel.app', 
+				'https://www.chefassistant.pp.ua'
+			],
 }))
 
 app.get('/',  (req, res) => {			
