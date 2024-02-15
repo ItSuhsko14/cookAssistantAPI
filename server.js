@@ -43,9 +43,9 @@ app.get('/auth/me', checkAuth, UserController.getMe)
 
 app.get('/cards', CardController.getAll)
 app.get('/cards/:id', CardController.getOne)
-app.post('/cards', checkAuth, cardCreateValidation, CardController.create)
-app.delete('/cards/:id', checkAuth, CardController.remove)
-app.patch('/cards/:id', checkAuth, CardController.update)
+app.post('/cards', cardCreateValidation, CardController.create)
+app.delete('/cards/:id', CardController.remove)
+app.patch('/cards/:id', CardController.update)
 
 app.listen(PORT, (err) => {
 	if (err) {
